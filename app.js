@@ -1,3 +1,10 @@
+
+import { 
+    add, 
+    subtract,
+    multiply, 
+    divide,
+} from "./functions.js";
 // get dom elements
 // get add-input-1
 const addInput1 = document.getElementById('add-input-1');
@@ -36,7 +43,10 @@ boogerButton.addEventListener('click', () => {
     const value2 = addInput2.value;
 
     // add the two values together
-    const sum = Number(value1) + Number(value2);
+    const sum = add(value1,value2);
+    
+    
+    
 
     // update the textContent of the span
     boogerSpan.textContent = sum;
@@ -45,22 +55,20 @@ boogerButton.addEventListener('click', () => {
 subButton.addEventListener('click', () => {
     const subValue1 = subInput1.value;
     const subValue2 = subInput2.value;
-    console.log(subValue1, subValue2);
-    const sum = Number(subValue1) - (subValue2);
+    const sum = subtract(subValue1, subValue2);
     subSpan.textContent = sum;
 });
 
 multButton.addEventListener('click', () => {
     const multValue1 = multInput1.value;
     const multValue2 = multInput2.value;
-    console.log(multValue1, multValue2);
-    const sum = Number(multValue1) * (multValue2);
+    const sum = multiply(multValue1, multValue2);
     multSpan.textContent = sum;
 });
 
 divButton.addEventListener('click', () => {
     const divValue1 = divInput1.value;
     const divValue2 = divInput2.value;
-    const sum = Number(divValue1) / (divValue2);
+    const sum = divide(divValue1, divValue2);
     divSpan.textContent = sum;
 });
